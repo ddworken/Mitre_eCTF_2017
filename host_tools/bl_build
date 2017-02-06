@@ -54,7 +54,7 @@ def generate_readback_password():
     Generate secret password for readback tool and store to secret file.
     """
     # Generate 16 character random password.
-    pw = ''.join(chr(random.randint(0, 255)) for i in range(8)).encode('hex')
+    pw = ''.join(chr(random.randint(0, 256)) for i in range(8)).encode('hex')
 
     # Write password to secret file.
     with open('secret_build_output.txt', 'wb+') as secret_build_output:
